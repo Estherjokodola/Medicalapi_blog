@@ -1,0 +1,16 @@
+# Ignore Python virtual environments
+.venv/
+
+# Bytecode / cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# VS Code settings
+.vscode/
+
+# Optional: pip lock file (if using pip-tools)
+# pip-sync.lock

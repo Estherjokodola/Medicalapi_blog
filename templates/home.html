@@ -1,7 +1,50 @@
-{% extends "layout.html"%}
+{% extends "layout.html" %}
 {% block content %}
-    {% for post in posts %}
-        <h2>{{ post.title }}</h2>
-        <p>{{ post.content}}</p>
-    {% endfor %}
-{% endblock content%}
+  {% for post in posts %}
+    <article class="content-section py-3 px-4 mb-4"
+             style="border-left: 4px solid var(--med-teal); border-radius: 0.5rem;">
+      <div class="d-flex align-items-start gap-4">
+        <img class="rounded-circle article-img flex-shrink-0"
+             src="/static/profile_pics/default.jpg"
+             alt="Dr. {{ post.author }}'s profile picture"
+             width="64"
+             height="64"
+             loading="lazy"
+             style="border: 3px solid var(--med-purple); object-fit: cover;">
+        <div class="flex-grow-1">
+          <div class="article-metadata mb-2 d-flex align-items-center gap-2">
+            <span class="badge"
+                  style="background-color: var(--med-rose); font-size: 0.7rem; letter-spacing: 0.05em;">
+              Clinician
+            </span>
+            <a class="me-2 fw-semibold text-decoration-none"
+               href="#"
+               style="color: var(--med-forest);">
+              Dr. {{ post.author }}
+            </a>
+            <small class="text-body-secondary">
+              🗓 {{ post.date_posted }}
+            </small>
+          </div>
+          <h2 class="mb-1" style="font-size: 1.25rem;">
+            <a class="article-title text-decoration-none fw-bold"
+               href="#"
+               style="color: var(--med-forest);">
+              {{ post.title }}
+            </a>
+          </h2>
+          <p class="article-content mt-2 mb-1 text-body-secondary" style="font-size: 0.95rem;">
+            {{ post.content }}
+          </p>
+          <div class="mt-2">
+            <a href="#"
+               class="btn btn-sm"
+               style="background-color: var(--med-teal); color: #fff; border: none; font-size: 0.8rem;">
+              Read Case Notes →
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+  {% endfor %}
+{% endblock content %}

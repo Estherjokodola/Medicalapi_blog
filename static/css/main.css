@@ -1,0 +1,307 @@
+:root {
+  /* Fonts */
+  --font-heading: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont,
+    sans-serif;
+  --font-body: "Nunito", system-ui, -apple-system, BlinkMacSystemFont,
+    sans-serif;
+
+  /* Medical Brand Colors */
+  --med-purple: #877499;
+  --med-teal:   #679f9f;
+  --med-cream:  #e6d4bf;
+  --med-rose:   #e18299;
+  --med-forest: #2d4729;
+
+  /* Derived shades */
+  --med-purple-dark:  #6e5e7e;
+  --med-teal-dark:    #518080;
+  --med-forest-dark:  #1f3219;
+  --med-rose-dark:    #c96a7e;
+
+  /* Colors */
+  --color-bg-body: #e6d4bf;
+  --color-bg-content: #ffffff;
+  --color-text-primary: #333333;
+  --color-text-heading: #2d4729;       /* med-forest for headings */
+  --color-steel: #2d4729;              /* navbar bg → forest */
+  --color-nav-link: #e6d4bf;           /* cream for nav links */
+  --color-nav-link-hover: #ffffff;
+  --color-link-hover: #679f9f;         /* teal for link hover */
+  --color-border: #dddddd;
+  --color-border-light: #e3e3e3;
+
+  /* Spacing */
+  --spacing-xl: 5rem;
+
+  /* Sizing */
+  --article-img-size: 4rem;
+  --account-img-size: 7.813rem;
+}
+
+/* Base Styles */
+body {
+  font-family: var(--font-body);
+  background: var(--color-bg-body);
+  color: var(--color-text-primary);
+}
+
+main {
+  padding-top: var(--spacing-xl);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  color: var(--color-text-heading);
+}
+
+.navbar-brand {
+  font-family: var(--font-heading);
+}
+
+a {
+  text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-link-hover);
+  outline-offset: 2px;
+}
+
+/* Headers and Navigation */
+.bg-steel {
+  background-color: var(--color-steel);
+}
+
+.site-header .navbar-nav .nav-link {
+  color: var(--color-nav-link);
+  transition: color 0.2s ease-in-out;
+}
+
+.site-header .navbar-nav .nav-link:hover,
+.site-header .navbar-nav .nav-link:focus {
+  color: var(--color-nav-link-hover);
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 600;
+}
+
+/* Content Sections */
+.content-section {
+  background: var(--color-bg-content);
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.05);
+  transition: box-shadow 0.15s ease, transform 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.content-section:hover {
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.1);
+  border-color: var(--color-border-light);
+}
+
+/* Articles */
+.article-title {
+  color: var(--color-text-heading);
+  transition: color 0.2s ease-in-out;
+}
+
+a.article-title:hover,
+a.article-title:focus {
+  color: var(--med-teal);
+  text-decoration: none;
+}
+
+.article-content {
+  white-space: pre-line;
+  font-size: 1.25rem;
+}
+
+.article-img {
+  height: var(--article-img-size);
+  width: var(--article-img-size);
+  flex-shrink: 0;
+  object-fit: cover;
+  border: 1px solid var(--color-border-light);
+  box-shadow: 0 0 0 2px var(--med-purple);
+}
+
+.article-metadata {
+  padding-bottom: 0.063rem;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.article-metadata a {
+  transition: color 0.2s ease-in-out;
+}
+
+.article-metadata a:hover,
+.article-metadata a:focus {
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+.article-svg {
+  width: 1.563rem;
+  height: 1.563rem;
+  vertical-align: middle;
+}
+
+/* Account/Profile */
+.account-img {
+  height: var(--account-img-size);
+  width: var(--account-img-size);
+  object-fit: cover;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+}
+
+.file-input-sm {
+  max-width: 300px;
+}
+
+/* Custom Button Colors - Light Mode */
+.btn-outline-primary {
+  --bs-btn-color: var(--med-teal);
+  --bs-btn-border-color: var(--med-teal);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--med-teal-dark);
+  --bs-btn-hover-border-color: var(--med-teal-dark);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--med-teal-dark);
+  --bs-btn-active-border-color: var(--med-teal-dark);
+}
+
+.btn-outline-secondary {
+  --bs-btn-color: var(--med-purple);
+  --bs-btn-border-color: var(--med-purple);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--med-purple-dark);
+  --bs-btn-hover-border-color: var(--med-purple-dark);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--med-purple-dark);
+  --bs-btn-active-border-color: var(--med-purple-dark);
+}
+
+.btn-outline-danger {
+  --bs-btn-color: var(--med-rose);
+  --bs-btn-border-color: var(--med-rose);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--med-rose-dark);
+  --bs-btn-hover-border-color: var(--med-rose-dark);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--med-rose-dark);
+  --bs-btn-active-border-color: var(--med-rose-dark);
+}
+
+.btn-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--med-teal);
+  --bs-btn-border-color: var(--med-teal);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--med-teal-dark);
+  --bs-btn-hover-border-color: var(--med-teal-dark);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--med-teal-dark);
+  --bs-btn-active-border-color: var(--med-teal-dark);
+}
+
+.btn-danger {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--med-rose);
+  --bs-btn-border-color: var(--med-rose);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--med-rose-dark);
+  --bs-btn-hover-border-color: var(--med-rose-dark);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--med-rose-dark);
+  --bs-btn-active-border-color: var(--med-rose-dark);
+}
+
+/* Custom Button Colors - Dark Mode */
+[data-bs-theme="dark"] .btn-outline-primary {
+  --bs-btn-color: #8ec8c8;
+  --bs-btn-border-color: #8ec8c8;
+  --bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: #8ec8c8;
+  --bs-btn-hover-border-color: #a5d4d4;
+  --bs-btn-active-color: #000;
+  --bs-btn-active-bg: #a5d4d4;
+  --bs-btn-active-border-color: #bce0e0;
+}
+
+[data-bs-theme="dark"] .btn-outline-secondary {
+  --bs-btn-color: #b3a3bf;
+  --bs-btn-border-color: #9e8daa;
+  --bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: #b3a3bf;
+  --bs-btn-hover-border-color: #c4b6ce;
+  --bs-btn-active-color: #000;
+  --bs-btn-active-bg: #c4b6ce;
+  --bs-btn-active-border-color: #d5cadd;
+}
+
+[data-bs-theme="dark"] .btn-outline-danger {
+  --bs-btn-color: #eeaabb;
+  --bs-btn-border-color: #eeaabb;
+  --bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: #eeaabb;
+  --bs-btn-hover-border-color: #f2bfcc;
+  --bs-btn-active-color: #000;
+  --bs-btn-active-bg: #f2bfcc;
+  --bs-btn-active-border-color: #f6d4dd;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .account-heading {
+    font-size: 2rem;
+  }
+
+  .article-img {
+    height: 3rem;
+    width: 3rem;
+  }
+}
+
+/* Dark Mode Features */
+[data-bs-theme="dark"] {
+  --color-bg-body: #1a1a1a;
+  --color-bg-content: #2d2d2d;
+  --color-text-primary: #e0e0e0;
+  --color-text-heading: #a8c5a8;       /* lightened forest for dark mode headings */
+  --color-border: #404040;
+  --color-border-light: #4a4a4a;
+}
+
+[data-bs-theme="dark"] .content-section {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+[data-bs-theme="dark"] article.content-section:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Custom Modal Colors */
+.modal-header.bg-success {
+  background-color: var(--med-forest) !important;
+}
+
+.modal-header.bg-danger {
+  background-color: var(--med-rose-dark) !important;
+}
+
+/* Ensure modal header text stays white in both themes */
+.modal-header.bg-success .modal-title,
+.modal-header.bg-danger .modal-title {
+  color: #ffffff !important;
+}
